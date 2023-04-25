@@ -1,0 +1,17 @@
+.image {
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+article {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    background-color: inherit;
+    margin: 5px;
+    width: 350px;
+}
+.textCenter {
+    text-align: center;
+}

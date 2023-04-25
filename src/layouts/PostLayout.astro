@@ -1,0 +1,12 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+    <p>{frontmatter.date}</p>
+		<slot />
+    <div>
+      <a href="../">HOME</a>
+    </div>
+</Layout>

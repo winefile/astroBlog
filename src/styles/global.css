@@ -1,0 +1,9 @@
+html, body {
+    font-family: system-ui, sans-serif;
+    background-color: #F6F6F6;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
