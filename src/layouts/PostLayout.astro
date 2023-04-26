@@ -1,12 +1,36 @@
 ---
-import Layout from "./Layout.astro";
-const { frontmatter } = Astro.props;
----
+import "./PostLayout.css";
+import "../styles/global.css";
 
-<Layout title={frontmatter.title}>
-    <p>{frontmatter.date}</p>
-		<slot />
-    <div>
-      <a href="../">HOME</a>
+const { frontmatter } = Astro.props;
+const tagUrl = "../../tags/" + frontmatter.tags;
+---
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+    <div id="wrap">
+      <p class="fs22 m0"><a href="../">頼成庭園管理ブログ</a></p>
+      <h1 class="fw_normal pd10_0_5">{frontmatter.title}</h1>
+      <p><a href={tagUrl}>#{frontmatter.tags}</a></p>
+      <p>{frontmatter.date}</p>
+      <slot />
+      <footer>
+        <div class="m10_0">
+          <a href="../">HOME</a>
+        </div>
+        <div class="m10_0">
+					<a href="https://raijo-tk.com" target="_blank">頼成庭園管理</a>
+				</div>
+				<div class="m10_0">
+					©<a href="https://atrise.work" target="_blank">@rise</a>
+				</div>
+      </footer>
     </div>
-</Layout>
+  </body>
+</html>

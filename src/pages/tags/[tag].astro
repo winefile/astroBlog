@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/TagLayout.astro";
 export async function getStaticPaths(){
     const allPosts = await Astro.glob("../posts/*.md");
     const uniqueTags = [...new Set(allPosts.map((post:any)=>post.frontmatter.tags).flat())];
@@ -16,8 +16,17 @@ const {posts} = Astro.props;
 const filterPosts = posts.filter((post:any)=>post.frontmatter.tags.includes(tag));
 ---
 <Layout title={tag}>
-    tag:{tag}
-    <ul>
-        {filterPosts.map((post:any)=><li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-    </ul>
+    <h1>キーワード：「{tag}」の記事一覧</h1>
+    <div class="textCenter">
+        {filterPosts.map((post:any)=>
+            <a href={post.url}>
+                <article>
+                    <div>
+                        <img src={"../images/" + post.frontmatter.image} class="image" />
+                    </div>
+                    {post.frontmatter.title}
+                </article>
+            </a>
+        )}
+    </div>
 </Layout>

@@ -2,8 +2,8 @@
 export interface Props {
 	title: string;
 }
-import Navi from '../components/Navi.astro';
-import "./Layout.css";
+
+import "./BaseLayout.css";
 import "../styles/global.css";
 
 const { title } = Astro.props;
@@ -20,16 +20,19 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div id="wrap">
-			<h1>頼成庭園管理ブログ</h1>
+			<p class="fs22"><a href="../">頼成庭園管理ブログ</a></p>
 			<slot />
 			<footer>
-				<div>
-					<a href="https://raijo-tk.com" target="_blank">頼成庭園管理</a>
+				<div class="m10_0">
+				  <a href="../">HOME</a>
 				</div>
-				<div>
-					©<a href="https://atrise.work" target="_blank">@rise</a>
-				</div>
-			</footer>
+				<div class="m10_0">
+							<a href="https://raijo-tk.com" target="_blank">頼成庭園管理</a>
+						</div>
+						<div class="m10_0">
+							©<a href="https://atrise.work" target="_blank">@rise</a>
+						</div>
+			  </footer>
 		</div>
 	</body>
 </html>

@@ -2,11 +2,6 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 10px;
     background-color: inherit;
-}
-
-h1 {
-    padding: 10px 0 50px;
-    margin: 0;
-    font-weight: normal;
 }
